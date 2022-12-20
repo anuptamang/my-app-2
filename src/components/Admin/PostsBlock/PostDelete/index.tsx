@@ -1,15 +1,10 @@
 import Modal from '../../../UI/Modal'
 import PostDeleteForm from './PostDeleteForm'
 
-const PostDelete = ({ rows, setRows, open, handleClose, deleteId }: any) => {
+const PostDelete = (props: any) => {
   return (
-    <Modal open={open} onClose={handleClose}>
-      <PostDeleteForm
-        rows={rows}
-        setRows={setRows}
-        handleClose={handleClose}
-        deleteId={deleteId}
-      />
+    <Modal {...props}>
+      <PostDeleteForm {...props} />
     </Modal>
   )
 }

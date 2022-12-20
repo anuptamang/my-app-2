@@ -50,3 +50,7 @@ export const postCreateFormSchema = yup.object({
   date: dateValidation,
   body: messageValidation,
 })
+
+export const tasksSchema = yup.object({
+  title: textValidation,
+})

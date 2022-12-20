@@ -4,7 +4,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { delay } from '../../../../utils/delay'
 import { notify } from '../../../../utils/notification'
 import { postCreateFormSchema } from '../../../../utils/validationSchema'
-import PostForm from '../PostForm'
+import PostForm from '../../../UI/CreateForm'
+import { PostProps } from '../../../../types/post'
 
 type IFormInput = {
   id?: string | number
@@ -41,7 +42,9 @@ const PostEditForm = ({ setRows, rows, handleClose, editPost }: any) => {
     reset()
 
     const updatedPosts = [...rows]
-    const index = updatedPosts.findIndex((post: any) => post.id === editPost.id)
+    const index = updatedPosts.findIndex(
+      (post: PostProps) => post.id === editPost.id
+    )
     updatedPosts[index] = {
       ...updatedPosts[index],
       title: data.title,

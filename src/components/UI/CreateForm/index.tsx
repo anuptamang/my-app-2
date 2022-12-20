@@ -3,8 +3,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { Controller } from 'react-hook-form'
-import { BtnLoading } from '../../../UI/BtnLoading'
-import { InputForm } from '../../../UI/InputForm'
+import { BtnLoading } from '../BtnLoading'
+import { InputForm } from '../InputForm'
 
 const InputStyles = {
   width: '100%',
@@ -24,7 +24,7 @@ const InputStyles = {
   },
 }
 
-const PostForm = ({
+const CreateForm = ({
   control,
   handleSubmit,
   onSubmit,
@@ -159,4 +159,4 @@ const PostForm = ({
   )
 }
 
-export default PostForm
+export default CreateForm

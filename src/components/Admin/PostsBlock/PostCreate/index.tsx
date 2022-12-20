@@ -1,10 +1,10 @@
 import Modal from '../../../UI/Modal'
 import PostCreateForm from './PostCreateForm'
 
-const PostCreate = ({ setRows, open, handleClose }: any) => {
+const PostCreate = (props: any) => {
   return (
-    <Modal open={open} onClose={handleClose}>
-      <PostCreateForm handleClose={handleClose} setRows={setRows} />
+    <Modal {...props}>
+      <PostCreateForm {...props} />
     </Modal>
   )
 }

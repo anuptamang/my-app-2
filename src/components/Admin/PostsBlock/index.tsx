@@ -6,10 +6,11 @@ import PostCreate from './PostCreate'
 import PostDelete from './PostDelete'
 import PostEdit from './PostEdit'
 import PostList from './PostList'
+import { PostProps } from '../../../types/post'
 
 export default function PostsBlock() {
-  const [rows, setRows] = useState<any>([])
-  const [editPost, setEditPost] = useState<any>([])
+  const [rows, setRows] = useState<PostProps[]>([])
+  const [editPost, setEditPost] = useState<PostProps>()
   const [deleteId, setDeleteId] = useState<string>('')
 
   const [open, setOpen] = useState(false)
@@ -27,7 +28,7 @@ export default function PostsBlock() {
   const handleEdit = (id: string) => {
     handleOpenEdit()
     if (rows.length > 0) {
-      const toEdit = rows.find((row: any) => row.id === id)
+      const toEdit = rows.find((row: PostProps) => row.id === id)
       setEditPost(toEdit)
     }
   }

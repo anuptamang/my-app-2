@@ -5,7 +5,8 @@ import { v4 as uuidv4 } from 'uuid'
 import { delay } from '../../../../utils/delay'
 import { notify } from '../../../../utils/notification'
 import { postCreateFormSchema } from '../../../../utils/validationSchema'
-import PostForm from '../PostForm'
+import PostForm from '../../../UI/CreateForm'
+import { PostProps } from '../../../../types/post'
 
 type IFormInput = {
   id?: string | number
@@ -40,7 +41,7 @@ const PostCreateForm = ({ setRows, handleClose }: any) => {
     await delay(3000)
     handleClose()
     reset()
-    setRows((prev: any) => [
+    setRows((prev: PostProps[]) => [
       ...prev,
       {
         id: uuidv4(),
