@@ -1,4 +1,4 @@
-## Live Preview: https://my-app-2-4100wxv7i-anuptamang.vercel.app
+## Live Preview: https://my-app-2-anuptamang.vercel.app
 
 ## Tools Used:
 
