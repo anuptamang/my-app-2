@@ -21,8 +21,11 @@ import { useNavigate } from 'react-router-dom'
 import { nav } from '../../data/static/nav'
 import { useAuth } from '../../hooks/useAuth'
 import { logout } from '../../redux/auth/authAction'
-import { useAppDispatch } from '../../redux/hooks'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import Link from '../UI/Link'
+import NavLink from '../UI/NavLink'
+import { BtnLoading } from '../UI/BtnLoading'
+import { authSelector } from '../../redux/auth/authSlice'
 
 interface Props {
   window?: () => Window
@@ -34,6 +37,7 @@ const Header = (props: Props) => {
   const { window } = props
   const { user } = useAuth()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { loading } = useAppSelector(authSelector)
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
@@ -60,9 +64,13 @@ const Header = (props: Props) => {
         {nav.map((item, key) => (
           <ListItem key={key} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <Link href={item.to} key={key}>
-                <Button>{item.text}</Button>
-              </Link>
+              <NavLink
+                href={item.to}
+                key={key}
+                sx={{ color: '#fff', '&.active': { color: '#057aef' } }}
+              >
+                {item.text}
+              </NavLink>
             </ListItemButton>
           </ListItem>
         ))}
@@ -101,9 +109,13 @@ const Header = (props: Props) => {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {nav.map((item, key) => (
-                <Link href={item.to} key={key}>
-                  <Button sx={{ color: '#fff' }}>{item.text}</Button>
-                </Link>
+                <NavLink
+                  href={item.to}
+                  key={key}
+                  sx={{ color: '#fff', '&.active': { color: '#057aef' } }}
+                >
+                  {item.text}
+                </NavLink>
               ))}
             </Box>
             {user ? (
@@ -133,52 +145,56 @@ const Header = (props: Props) => {
                 >
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign='center'>
-                      <Link
+                      <NavLink
                         sx={{
                           color: '#333',
                           '&:hover': {
                             color: '#fff',
                           },
+                          '&.active': { color: '#057aef' },
                         }}
-                        href='/user'
+                        href='/user/dashboard'
                       >
                         Dashboard
-                      </Link>
+                      </NavLink>
                     </Typography>
                   </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign='center'>
-                      <Link
+                      <NavLink
                         sx={{
                           color: '#333',
                           '&:hover': {
                             color: '#fff',
                           },
+                          '&.active': { color: '#057aef' },
                         }}
                         href='/user/posts'
                       >
                         Posts
-                      </Link>
+                      </NavLink>
                     </Typography>
                   </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign='center'>
-                      <Link
+                      <NavLink
                         sx={{
                           color: '#333',
                           '&:hover': {
                             color: '#fff',
                           },
+                          '&.active': { color: '#057aef' },
                         }}
                         href='/user/tasks'
                       >
                         Tasks
-                      </Link>
+                      </NavLink>
                     </Typography>
                   </MenuItem>
-                  <MenuItem onClick={handleCloseUserMenu}>
+                  <MenuItem>
                     <Typography textAlign='center'>
-                      <Button
+                      <BtnLoading
+                        loading={loading}
                         sx={{
                           color: '#333',
                           '&:hover': {
@@ -188,15 +204,18 @@ const Header = (props: Props) => {
                         onClick={() => dispatch(logout(navigate))}
                       >
                         Logout
-                      </Button>
+                      </BtnLoading>
                     </Typography>
                   </MenuItem>
                 </Menu>
               </Box>
             ) : (
-              <Link href={'/login'}>
-                <Button sx={{ color: '#fff' }}>Login</Button>
-              </Link>
+              <NavLink
+                href={'/login'}
+                sx={{ color: '#fff', '&.active': { color: '#057aef' } }}
+              >
+                Login
+              </NavLink>
             )}
           </Toolbar>
         </Container>

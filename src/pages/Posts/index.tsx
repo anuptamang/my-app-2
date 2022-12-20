@@ -1,9 +1,8 @@
 import React from 'react'
+import PostsSection from '../../features/PostsSection'
 
 const Posts = () => {
-  return (
-    <div>Posts</div>
-  )
+  return <PostsSection />
 }
 
 export default Posts

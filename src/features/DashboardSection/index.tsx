@@ -1,9 +1,10 @@
 import React from 'react'
+import DashboardBlock from '../../components/Admin/DashboardBlock'
 
 type Props = {}
 
 const DashboardSection = (props: Props) => {
-  return <div>Dashboard</div>
+  return <DashboardBlock />
 }
 
 export default DashboardSection

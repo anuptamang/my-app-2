@@ -31,10 +31,22 @@ export const messageValidation = yup
   .min(2, 'Last Name must be at least 2 character')
   .max(100, 'Last Name must be less than 20 characters')
 
+export const dateValidation = yup
+  .string()
+  .required('Required!')
+
 export const contactFormSchema = yup.object({
   firstName: textValidation,
   lastName: textValidation,
   email: emailValidation,
   phone: phoneValidation,
   message: messageValidation,
+})
+
+export const postCreateFormSchema = yup.object({
+  title: textValidation,
+  author: textValidation,
+  status: textValidation,
+  date: dateValidation,
+  body: messageValidation,
 })

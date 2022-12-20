@@ -1,6 +1,5 @@
 import { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Loading from '../../components/UI/Loading'
 import PrivateRoute from '../PrivateRoute'
 
 const General = lazy(() => import('../../layouts/General'))
@@ -15,7 +14,7 @@ const Tasks = lazy(() => import('../../pages/Tasks'))
 
 const AppRouter = () => {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={null}>
       <Routes>
         <Route path='/' element={<General />}>
           <Route index element={<Home />} />
@@ -24,7 +23,7 @@ const AppRouter = () => {
           <Route path='*' element={<NotFound />} />
 
           <Route path='user' element={<PrivateRoute redirect='/login' />}>
-            <Route index element={<Dashboard />} />
+            <Route path='dashboard' element={<Dashboard />} />
             <Route path='posts' element={<Posts />} />
             <Route path='tasks' element={<Tasks />} />
           </Route>

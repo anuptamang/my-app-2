@@ -1,10 +1,9 @@
 import { CssBaseline, ThemeProvider, debounce } from '@mui/material'
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { theme } from './assets/styles/theme'
-import Loading from './components/UI/Loading'
 import { store } from './redux/store'
 import reportWebVitals from './reportWebVitals'
 import { saveState } from './utils/localStorage'
@@ -24,7 +23,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={null}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <App />

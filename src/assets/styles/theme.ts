@@ -123,6 +123,13 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          color: '#333'
+        },
+      },
+    },
   },
 });
 

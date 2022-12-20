@@ -44,8 +44,9 @@ export const login = (payload: LoginPayloadProps, navigate: any) => async (dispa
 export const logout = (navigate: any) => async (dispatch: (arg0: DispatchLogoutProps) => any) => {
   dispatch(userLogout())
   try {
+    await delay(3000)
     localStorage.clear()
-    // navigate(from, { replace: true })
+
     dispatch(userLogoutSuccess())
 
   } catch (err: any) {
