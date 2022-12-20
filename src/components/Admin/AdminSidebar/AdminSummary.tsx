@@ -16,7 +16,10 @@ const AdminSummary = () => {
         <ListItemText
           primary='Jon Doe'
           secondary='Admin'
-          sx={{ color: '#333' }}
+          sx={{
+            color: '#fff',
+            '& .MuiListItemText-secondary': { color: '#fff' },
+          }}
         />
       </ListItem>
     </List>

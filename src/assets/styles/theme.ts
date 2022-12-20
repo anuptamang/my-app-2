@@ -130,6 +130,30 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiDatePicker: {
+      styleOverrides: {
+        root: {
+          color: '#333',
+
+        },
+        MuiPickersDay: {
+          day: {
+            color: 'black',
+
+          },
+          daySelected: {
+            backgroundColor: '#33abb6',
+          },
+          dayDisabled: {
+            color: '#ccc',
+          },
+          current: {
+            color: 'red',
+          },
+        },
+      },
+    },
+
   },
 });
 

@@ -15,7 +15,7 @@ const NavList = () => {
           }}
         >
           <ListItemIcon>
-            <DashboardIcon />
+            <DashboardIcon color='#fff' />
           </ListItemIcon>
           <ListItemText primary='Dashboard' />
         </NavLink>
@@ -30,7 +30,7 @@ const NavList = () => {
           }}
         >
           <ListItemIcon>
-            <PostsIcon />
+            <PostsIcon color='#fff' />
           </ListItemIcon>
           <ListItemText primary='Posts' />
         </NavLink>
@@ -45,7 +45,7 @@ const NavList = () => {
           }}
         >
           <ListItemIcon>
-            <TasksIcon />
+            <TasksIcon color='#fff' />
           </ListItemIcon>
           <ListItemText primary='Tasks' />
         </NavLink>

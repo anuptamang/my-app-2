@@ -66,7 +66,7 @@ const Header = (props: Props) => {
               <NavLink
                 href={item.to}
                 key={key}
-                sx={{ color: '#fff', '&.active': { color: '#057aef' } }}
+                sx={{ color: '#333', '&.active': { color: '#057aef' } }}
               >
                 {item.text}
               </NavLink>
@@ -96,7 +96,7 @@ const Header = (props: Props) => {
               onClick={handleDrawerToggle}
               sx={{ mr: 2, display: { sm: 'none' } }}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ color: '#fff' }} />
             </IconButton>
             <Typography
               component='div'
@@ -111,7 +111,11 @@ const Header = (props: Props) => {
                 <NavLink
                   href={item.to}
                   key={key}
-                  sx={{ color: '#fff', '&.active': { color: '#057aef' } }}
+                  sx={{
+                    color: '#fff',
+                    '&.active': { color: '#057aef' },
+                    marginRight: '20px',
+                  }}
                 >
                   {item.text}
                 </NavLink>
@@ -127,6 +131,7 @@ const Header = (props: Props) => {
                 <Menu
                   sx={{
                     mt: '45px',
+                    color: '#fff',
                   }}
                   id='menu-appbar'
                   anchorEl={anchorElUser}
