@@ -1,4 +1,4 @@
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts'
+import { Pie, PieChart, ResponsiveContainer } from 'recharts'
 
 const data01 = [
   { name: 'Group A', value: 400 },

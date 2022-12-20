@@ -1,12 +1,12 @@
 import {
-  BarChart,
   Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  Tooltip,
-  Legend,
-  CartesianGrid,
-  ResponsiveContainer,
 } from 'recharts'
 const data = [{ name: 'Page A', uv: 400, pv: 2400, amt: 2400 }]
 

@@ -1,13 +1,12 @@
-import { Button, Grid, Stack, Typography, useTheme } from '@mui/material'
+import { Button, Stack, Typography } from '@mui/material'
+import { red } from '@mui/material/colors'
 import { useState } from 'react'
 import { delay } from '../../../../utils/delay'
 import { notify } from '../../../../utils/notification'
 import { BtnLoading } from '../../../UI/BtnLoading'
-import { red } from '@mui/material/colors'
 
 const PostDeleteForm = ({ rows, setRows, handleClose, deleteId }: any) => {
   const [loading, setLoading] = useState(false)
-  const theme = useTheme()
 
   const handleSubmit = async () => {
     setLoading(true)

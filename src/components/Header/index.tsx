@@ -3,7 +3,7 @@ import {
   AppBar,
   Avatar,
   Box,
-  Button,
+  Container,
   Drawer,
   IconButton,
   List,
@@ -15,17 +15,16 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Container } from '@mui/material'
 import { MouseEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { nav } from '../../data/static/nav'
 import { useAuth } from '../../hooks/useAuth'
 import { logout } from '../../redux/auth/authAction'
+import { authSelector } from '../../redux/auth/authSlice'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { BtnLoading } from '../UI/BtnLoading'
 import Link from '../UI/Link'
 import NavLink from '../UI/NavLink'
-import { BtnLoading } from '../UI/BtnLoading'
-import { authSelector } from '../../redux/auth/authSlice'
 
 interface Props {
   window?: () => Window

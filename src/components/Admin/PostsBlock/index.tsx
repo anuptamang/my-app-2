@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import { GridActionsCellItem } from '@mui/x-data-grid'
+import { useState } from 'react'
 import { PostsIcon } from '../../UI/Icons'
-import PostList from './PostList'
 import PostCreate from './PostCreate'
-import PostEdit from './PostEdit'
 import PostDelete from './PostDelete'
+import PostEdit from './PostEdit'
+import PostList from './PostList'
 
 export default function PostsBlock() {
   const [rows, setRows] = useState<any>([])
@@ -34,8 +34,6 @@ export default function PostsBlock() {
   const handleDelete = (id: string) => {
     handleOpenDelete()
     setDeleteId(id)
-    // const newData = rows.filter((post: any) => post.id !== id)
-    // setRows(newData)
   }
 
   const columns = [
